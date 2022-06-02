@@ -1,4 +1,5 @@
 #include "lists.h"
+#include "stdio.h"
 /**
  * function that checks if list contains cycle
  * Return 1 if list has cycle
