@@ -7,16 +7,17 @@
  */
 int check_cyc(listint_t *list)
 {
-	listint_t *fast = list;
-	listint_t *slow = list;
-	if (!list)
-		return (0);
-	while (slow && fast && fast -> next)
+	listint_t *fast = list, *slow = list;
+
+	while (fast != NULL && (*fast).next != NULL)
 	{
-		slow = slow -> next;
-		fast = fast -> next -> next;
+		fast = fast->next->next;
+		slow = slow->next;
 		if (fast == slow)
-			return(1);
+			break;
 	}
-	return (0);
+	if (fast == NULL || (*fast).next == NULL)
+		return(0);
+	else
+		return(1);
 }
